@@ -1,0 +1,16 @@
+---
+import { SITE } from '../lib/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© {year} {SITE.author} · 用 <a href="https://astro.build">Astro</a> 构建</p>
+    <p class="footer-links">
+      <a href="/rss.xml">RSS</a>
+      <a href={SITE.github} rel="me noopener" target="_blank">GitHub</a>
+      <a href={`mailto:${SITE.email}`}>Email</a>
+    </p>
+  </div>
+</footer>

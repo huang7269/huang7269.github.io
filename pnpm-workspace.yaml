@@ -1,0 +1,6 @@
+# 显式声明本项目是 pnpm 的根，设置才会生效
+packages:
+  - '.'
+
+# 扁平 node_modules：不依赖 Windows junction，clone 下来即可运行
+nodeLinker: hoisted

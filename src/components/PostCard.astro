@@ -1,0 +1,31 @@
+---
+import type { Post } from '../lib/posts';
+import { formatDate, readingTime } from '../lib/posts';
+
+interface Props {
+  post: Post;
+}
+
+const { post } = Astro.props;
+---
+
+<article class="post-card">
+  <time class="post-card-date" datetime={post.data.date.toISOString()}>
+    {formatDate(post.data.date)}
+  </time>
+
+  <div>
+    <h2 class="post-card-title">
+      <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+    </h2>
+
+    {post.data.description && <p class="post-card-desc">{post.data.description}</p>}
+
+    <ul class="post-card-tags">
+      {post.data.tags.map((tag) => (
+        <li><a class="tag" href={`/tags/${tag}/`}>{tag}</a></li>
+      ))}
+      <li><span class="tag" style="border-color:transparent">{readingTime(post.body)} 分钟</span></li>
+    </ul>
+  </div>
+</article>

@@ -1,0 +1,15 @@
+/**
+ * 站点信息 —— 改这里就能改全站标题、描述、作者、社交链接。
+ * 注意：域名还要同步改 astro.config.mjs 里的 `site`。
+ */
+export const SITE = {
+  title: '边界笔记',
+  tagline: '工程实践 · 系统设计 · 想明白的瞬间',
+  description:
+    '一个程序员的技术笔记本。记录工程实践、系统设计、以及那些踩过坑才想明白的事。',
+  author: '你的名字',
+  url: 'https://blog.example.com',
+  github: 'https://github.com/yourname',
+  email: 'you@example.com',
+  locale: 'zh-CN',
+} as const;

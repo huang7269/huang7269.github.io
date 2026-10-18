@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../lib/site';
+---
+
+<BaseLayout title="关于" description={`关于 ${SITE.title} 和它的作者`}>
+  <header class="page-header">
+    <h1>关于</h1>
+    <p>这个站点和我</p>
+  </header>
+
+  <div class="about-body">
+    <p>
+      你好，我是<b>{SITE.author}</b>。这里是 {SITE.title}，一个用来存放技术笔记的地方。
+    </p>
+
+    <p>
+      我写博客的原因很简单：<strong>写作是最好的思考方式</strong>。那些在脑子里觉得「差不多懂了」的东西，
+      一旦要落到文字上，就会暴露出缝隙。所以这里的内容偏向「我到底想清楚了什么」，而不是教程搬运。
+    </p>
+
+    <h2>这里会写什么</h2>
+    <ul>
+      <li>工程实践：踩过的坑、做过的取舍、事后复盘</li>
+      <li>系统设计：架构、性能、可靠性的思考过程</li>
+      <li>工具与方法：怎么让自己少做重复劳动</li>
+    </ul>
+
+    <h2>联系我</h2>
+    <p>
+      GitHub：<a href={SITE.github} target="_blank" rel="noopener">{SITE.github}</a><br />
+      Email：<a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+    </p>
+
+    <h2>关于本站</h2>
+    <p>
+      用 <a href="https://astro.build">Astro</a> 构建，纯静态、无后端、无追踪脚本。
+      文章以 Markdown 保存在仓库里，改一个文件、push 一次，就发布。
+      你也可以通过 <a href="/rss.xml">RSS</a> 订阅。
+    </p>
+  </div>
+</BaseLayout>

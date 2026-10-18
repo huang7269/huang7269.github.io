@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import { SITE } from '../lib/site';
+import { getPublishedPosts } from '../lib/posts';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout>
+  <section class="hero">
+    <h1 class="hero-title">{SITE.title}</h1>
+    <p class="hero-desc">{SITE.description}</p>
+    <p class="hero-meta">
+      {posts.length} 篇文章 · <a href="/rss.xml">RSS 订阅</a>
+    </p>
+  </section>
+
+  <section aria-labelledby="latest">
+    <h2 id="latest" class="section-title">最近文章</h2>
+    <div class="post-list">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  </section>
+</BaseLayout>
