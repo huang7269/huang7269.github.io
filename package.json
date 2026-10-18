@@ -13,5 +13,6 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "astro": "^6.4.8"
-  }
+  },
+  "packageManager": "pnpm@11.28.5"
 }

@@ -89,16 +89,40 @@ draft: false
 - 每页 SEO meta、Open Graph、JSON-LD 结构化数据
 - 移动端适配
 
-## 以后想上线
+## 部署
 
-站点是纯静态的，`dist/` 扔到任何静态托管都能跑。推荐 Cloudflare Pages：
+站点是纯静态的，`dist/` 扔到任何静态托管都能跑。仓库里已经带好 GitHub Pages 的自动部署配置
+（`.github/workflows/deploy.yml`），push 到 `main` 就会自动构建并发布。
 
-1. 把项目推到 GitHub 仓库
-2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect to Git
-3. 选择仓库，构建设置填：Framework preset `Astro`，Build command `pnpm build`，Output directory `dist`
-4. 绑定自定义域名，HTTPS 自动
+### GitHub Pages（已配置）
 
-同类选择：Vercel（体验最顺）、Netlify、GitHub Pages（最省事但国内访问不稳）。
+1. 新建仓库，**名字用 `<你的用户名>.github.io`**（例如 `alice.github.io`）。
+   这样站点在根路径 `https://alice.github.io/`，现有链接不用改。
+2. 推代码：
+
+   ```bash
+   git init
+   git add -A
+   git commit -m "init blog"
+   git branch -M main
+   git remote add origin https://github.com/<你的用户名>/<你的用户名>.github.io.git
+   git push -u origin main
+   ```
+
+3. 把 `astro.config.mjs` 里的 `site` 改成 `https://<你的用户名>.github.io`
+4. 仓库 → Settings → Pages → Build and deployment → Source 选 **GitHub Actions**
+5. 等 Actions 跑完（约一分钟），访问 `https://<你的用户名>.github.io`
+
+> 仓库如果不叫 `<用户名>.github.io`（比如叫 `blog`），站点会挂在 `https://用户名.github.io/blog/` 下。
+> 那样需要给 `astro.config.mjs` 加 `base: '/blog'`，并且把站内所有绝对链接改成带 base 的形式——
+> 当前代码还没做这层适配。
+
+### 其他平台
+
+- **Cloudflare Pages**：Connect to Git → Framework preset `Astro`，Build `pnpm build`，Output `dist`
+- **Vercel**：导入仓库，自动识别 Astro
+- **Netlify**：同上
+
 如果主要读者在国内且要求稳定，再考虑国内云 + 域名备案。
 
 ## 几个容易踩的坑
