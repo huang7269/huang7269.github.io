@@ -10,7 +10,8 @@ permissions:
   pages: write
   id-token: write
 
-# 鍚屼竴鏃堕棿鍙窇涓€涓儴缃诧紝鏂扮殑 push 鍙栨秷鎺掗槦涓殑鏃т换鍔?concurrency:
+# 同一时间只跑一个部署，新的 push 取消排队中的旧任务
+concurrency:
   group: pages
   cancel-in-progress: true
 
@@ -21,7 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 鐗堟湰鍙栬嚜 package.json 鐨?packageManager 瀛楁
+      # 版本取自 package.json 的 packageManager 字段
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
