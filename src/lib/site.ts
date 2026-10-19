@@ -10,6 +10,6 @@ export const SITE = {
   author: '你的名字',
   url: 'https://blog.example.com',
   github: 'https://github.com/yourname',
-  email: 'you@example.com',
+  email: 'huang7269@outlook.com',
   locale: 'zh-CN',
 } as const;

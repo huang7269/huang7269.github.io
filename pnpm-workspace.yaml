@@ -4,3 +4,10 @@ packages:
 
 # 扁平 node_modules：不依赖 Windows junction，clone 下来即可运行
 nodeLinker: hoisted
+
+# pnpm 10+ 默认不执行依赖的安装脚本。不显式放行，`pnpm install --frozen-lockfile`
+# 会以 ERR_PNPM_IGNORED_BUILDS 退出 1 —— GitHub Actions 里就会表现为 build 失败。
+# 注意：pnpm 11 用的是 allowBuilds 映射，不是旧版的 onlyBuiltDependencies 数组。
+allowBuilds:
+  esbuild: true
+  sharp: true
