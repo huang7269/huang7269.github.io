@@ -7,9 +7,9 @@ export const SITE = {
   tagline: '工程实践 · 系统设计 · 想明白的瞬间',
   description:
     '一个程序员的技术笔记本。记录工程实践、系统设计、以及那些踩过坑才想明白的事。',
-  author: '你的名字',
-  url: 'https://blog.example.com',
-  github: 'https://github.com/yourname',
+  author: '黄棒',
+  url: 'https://huang7269.github.io',
+  github: 'https://github.com/huang7269',
   email: 'huang7269@outlook.com',
   locale: 'zh-CN',
 } as const;
