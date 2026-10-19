@@ -20,7 +20,7 @@ ACCENT = (184, 66, 15)
 
 TITLE = "边界笔记"
 TAGLINE = "工程实践 · 系统设计 · 想明白的瞬间"
-FOOTER = "blog.example.com"
+FOOTER = "huang7269.github.io"
 
 FONT_CANDIDATES_BOLD = [
     "C:/Windows/Fonts/msyhbd.ttc",
