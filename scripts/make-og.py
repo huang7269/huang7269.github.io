@@ -18,8 +18,8 @@ SOFT = (85, 80, 74)
 FAINT = (139, 133, 125)
 ACCENT = (184, 66, 15)
 
-TITLE = "边界笔记"
-TAGLINE = "工程实践 · 系统设计 · 想明白的瞬间"
+TITLE = "灰度"
+TAGLINE = "工程实践 · 系统设计 · 踩坑复盘"
 FOOTER = "huang7269.github.io"
 
 FONT_CANDIDATES_BOLD = [

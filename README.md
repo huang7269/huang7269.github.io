@@ -1,4 +1,4 @@
-# 边界笔记 · 个人技术博客
+# 灰度 · 个人技术博客
 
 一个用 [Astro](https://astro.build) 构建的纯静态技术博客：Markdown 写作、零 JavaScript 运行时、无后端、无数据库。
 
